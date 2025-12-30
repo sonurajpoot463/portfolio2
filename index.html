@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonu Rajpoot | Senior E-commerce Developer | WordPress & Shopify Specialist</title>
+    <meta name="description" content="High-impact e-commerce developer with 3+ years experience building conversion-focused stores on WordPress/WooCommerce and Shopify. 150+ projects delivered.">
+    <meta name="keywords" content="WordPress Developer, Shopify Developer, WooCommerce, Liquid, E-commerce Developer">
+    
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:title" content="Sonu Rajpoot | Senior E-commerce Developer">
+    <meta property="og:description" content="Building high-performing digital storefronts with WordPress & Shopify expertise">
+    <meta property="og:image" content="assets/img/SonuRajpoot.jpg">
+    <meta property="og:url" content="https://sonurajpoot.dev">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #7c3aed;
+            --accent-color: #06b6d4;
+            --shopify-green: #95BF47;
+            --woocommerce-purple: #96588a;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            
+            /* Light Theme */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-card: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #8a8f97;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #f4f9ff;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .display-1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .display-2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .text-gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-shopify {
+            background: var(--shopify-green);
+            color: white;
+        }
+
+        .btn-woocommerce {
+            background: var(--woocommerce-purple);
+            color: white;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(236, 115, 115, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        [data-theme="dark"] .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+        }
+
+        /* Navigation */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .nav-link i {
+            width: 24px;
+            margin-right: 0.75rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            padding: 0;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+            padding-top: 4rem;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle at 70% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border-radius: 2rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .hero-badge i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills */
+        .skill-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: 2rem;
+            margin: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-badge i {
+            margin-right: 0.5rem;
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-filter {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Contact Form */
+        .contact-form .form-control {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 50px;
+            height: 26px;
+            background: var(--border-color);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
+
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .theme-toggle::after {
+            transform: translateX(24px);
+            background: var(--primary-color);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .display-1 {
+                font-size: 3rem;
+            }
+            
+            .display-2 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Project Modal */
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .project-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--danger-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Project Details */
+        .project-details {
+            padding: 2rem;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .loading.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Dark Mode Fixes */
+        [data-theme="dark"] .card {
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        [data-theme="dark"] .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Utility Classes */
+        .mt-6 {
+            margin-top: 4rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 4rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .gap-3 {
+            gap: 1rem;
+        }
+
+        .gap-4 {
+            gap: 1.5rem;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        .h-100 {
+            height: 100%;
+        }
+
+        /* Avatar Sizes */
+        .avatar-sm {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-lg {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Badge Colors */
+        .bg-purple {
+            background-color: var(--woocommerce-purple) !important;
+        }
+
+        .bg-linkedin {
+            background-color: #0077b5 !important;
+        }
+
+        .bg-success {
+            background-color: var(--success-color) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+
+        /* Social Icons */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: var(--primary-color);
+            color: white !important;
+            border-color: var(--primary-color);
+        }
+
+        /* Badge Styling */
+        .badge {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Grid Fixes */
+        .row {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 1.5rem;
+        }
+
+        /* Container Padding */
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        /* Dark mode text color fixes */
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .text-dark,
+[data-theme="dark"] .text-body,
+[data-theme="dark"] .text-black,
+[data-theme="dark"] .text-gray-800,
+[data-theme="dark"] .text-gray-900 {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .text-secondary {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .text-light {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .text-white {
+    color: #ffffff !important;
+}
+
+/* Card text colors */
+[data-theme="dark"] .card,
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .card-text {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .card .text-muted,
+[data-theme="dark"] .card .text-secondary {
+    color: #94a3b8 !important;
+}
+
+/* Headings */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: #ffffff !important;
+}
+
+/* Links */
+[data-theme="dark"] a:not(.btn) {
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] a:not(.btn):hover {
+    color: #93c5fd !important;
+}
+
+/* List items */
+[data-theme="dark"] ul,
+[data-theme="dark"] ol,
+[data-theme="dark"] li {
+    color: #f8fafc !important;
+}
+
+/* Form elements */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-label {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* Specific component fixes */
+[data-theme="dark"] .hero-section .lead,
+[data-theme="dark"] .hero-section .text-secondary {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .glass-card {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .glass-card .text-muted {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .stat-card .text-secondary {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .skill-badge {
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+[data-theme="dark"] .project-card .card-text {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .project-modal .modal-content {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .project-details .text-secondary {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .footer {
+    color: #cbd5e1 !important;
+}
+
+/* Button text colors */
+[data-theme="dark"] .btn-outline-primary {
+    color: #60a5fa !important;
+    border-color: #60a5fa !important;
+}
+
+[data-theme="dark"] .btn-outline-primary:hover {
+    color: #ffffff !important;
+    background-color: #2563eb !important;
+}
+
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-success,
+[data-theme="dark"] .btn-warning,
+[data-theme="dark"] .btn-danger,
+[data-theme="dark"] .btn-info {
+    color: #ffffff !important;
+}
+
+/* Badge text colors */
+[data-theme="dark"] .badge {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .bg-light .badge {
+    color: #1e293b !important;
+}
+
+/* Social icons */
+[data-theme="dark"] .social-icon {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .social-icon:hover {
+    color: #ffffff !important;
+}
+
+/* Nav links */
+[data-theme="dark"] .nav-link {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Tech tags */
+[data-theme="dark"] .tech-tag {
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+/* Progress bars and other elements */
+[data-theme="dark"] .progress {
+    background-color: #334155 !important;
+}
+
+[data-theme="dark"] .progress-bar {
+    background-color: #3b82f6 !important;
+}
+
+/* Table text colors */
+[data-theme="dark"] table,
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+/* Code blocks */
+[data-theme="dark"] code,
+[data-theme="dark"] pre {
+    color: #f8fafc !important;
+    background-color: #1e293b !important;
+}
+
+/* Blockquotes */
+[data-theme="dark"] blockquote {
+    color: #cbd5e1 !important;
+    border-left-color: #475569 !important;
+}
+
+/* Text utilities override */
+[data-theme="dark"] .text-primary { color: #60a5fa !important; }
+[data-theme="dark"] .text-success { color: #34d399 !important; }
+[data-theme="dark"] .text-warning { color: #fbbf24 !important; }
+[data-theme="dark"] .text-danger { color: #f87171 !important; }
+[data-theme="dark"] .text-info { color: #22d3ee !important; }
+
+/* Background overrides to ensure text contrast */
+[data-theme="dark"] .bg-white {
+    background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: #334155 !important;
+}
+
+[data-theme="dark"] .bg-dark {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+/* Ensure all text in dark mode sections is readable */
+[data-theme="dark"] section,
+[data-theme="dark"] div,
+[data-theme="dark"] p,
+[data-theme="dark"] span:not(.text-gradient) {
+    color: inherit;
+}
+
+/* Specific for your project sections */
+[data-theme="dark"] #about .card-text,
+[data-theme="dark"] #expertise .card-text,
+[data-theme="dark"] #projects .card-text,
+[data-theme="dark"] #contact .card-text {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .section-header .text-secondary {
+    color: #94a3b8 !important;
+}
+
+/* Fix for text inside cards */
+[data-theme="dark"] .card *:not(.btn):not(.badge):not(.text-gradient) {
+    color: inherit;
+}
+
+/* Fix for list items in cards */
+[data-theme="dark"] .card ul li,
+[data-theme="dark"] .card ol li {
+    color: #cbd5e1 !important;
+}
+
+/* Fix for check icons */
+[data-theme="dark"] .fa-check-circle,
+[data-theme="dark"] .fa-check {
+    color: inherit !important;
+}
+
+/* Gradient text should remain gradient */
+[data-theme="dark"] .text-gradient {
+    -webkit-text-fill-color: initial;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Override any inline styles */
+[data-theme="dark"] [style*="color:"]:not(.text-gradient):not([style*="color: transparent"]):not([style*="color: inherit"]) {
+    color: #f8fafc !important;
+}
+
+/* Fix for Bootstrap utility classes */
+[data-theme="dark"] .text-body-secondary {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .text-body-tertiary {
+    color: #64748b !important;
+}
+
+/* Fix for text in modals */
+[data-theme="dark"] .modal-body,
+[data-theme="dark"] .modal-title,
+[data-theme="dark"] .modal-content {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .modal-body .text-muted {
+    color: #94a3b8 !important;
+}
+
+/* Ensure proper contrast for all elements */
+[data-theme="dark"] * {
+    --bs-body-color: #f8fafc !important;
+    --bs-body-color-rgb: 248, 250, 252 !important;
+}
+
+[data-theme="dark"] ::selection {
+    background-color: rgba(59, 130, 246, 0.5) !important;
+    color: #ffffff !important;
+}
+    </style>
+</head>
+
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header text-center">
+            <img src="assets/img/SonuRajpoot.jpg" alt="Sonu Rajpoot" class="profile-img" data-aos="zoom-in">
+            <h4 class="fw-bold mb-2">Sonu Rajpoot</h4>
+            <p class="text-muted mb-3">Senior E-commerce Developer</p>
+            
+            <!-- Social Links -->
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="https://linkedin.com/in/sonu-rajpoot/" class="text-decoration-none" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in fa-lg"></i>
+                    </div>
+                </a>
+                <a href="https://github.com/sonurajpoot463" class="text-decoration-none" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-github fa-lg"></i>
+                    </div>
+                </a>
+                <a href="https://wa.me/918840264574" class="text-decoration-none" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-whatsapp fa-lg"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <span class="me-2"><i class="fas fa-sun"></i></span>
+                <div class="theme-toggle" id="themeToggle"></div>
+                <span class="ms-2"><i class="fas fa-moon"></i></span>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="#home" class="nav-link active" data-section="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#about" class="nav-link" data-section="about">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="#expertise" class="nav-link" data-section="expertise">
+                <i class="fas fa-code"></i>
+                <span>Expertise</span>
+            </a>
+            <a href="#projects" class="nav-link" data-section="projects">
+                <i class="fas fa-briefcase"></i>
+                <span>Projects</span>
+            </a>
+            <a href="#stats" class="nav-link" data-section="stats">
+                <i class="fas fa-chart-line"></i>
+                <span>Stats</span>
+            </a>
+            <a href="#contact" class="nav-link" data-section="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+
+        <!-- Download CV -->
+        <div class="mt-auto text-center">
+            <a href="img/Sonu Rajpoot Wordpress And Shopify Web Developer CV Resume.pdf" 
+               class="btn btn-outline-primary w-100" download>
+                <i class="fas fa-download me-2"></i>Download CV
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <div class="hero-badge">
+                            <i class="fas fa-bolt"></i>
+                            <span>Available for Freelance Work</span>
+                        </div>
+                        
+                        <h1 class="display-1 fw-bold mb-4">
+                            Building <span class="text-gradient">High-Performing</span> Digital Storefronts
+                        </h1>
+                        
+                        <p class="lead text-secondary mb-4">
+                            I specialize in creating conversion-optimized e-commerce solutions using 
+                            <strong>WordPress/WooCommerce</strong> and <strong>Shopify</strong>. 
+                            With 3+ years of experience across 150+ projects, I deliver stores that drive revenue.
+                        </p>
+                        
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a href="#contact" class="btn btn-primary btn-lg">
+                                <i class="fas fa-rocket me-2"></i>Start a Project
+                            </a>
+                            <a href="#projects" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-eye me-2"></i>View Projects
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="glass-card floating">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="avatar-lg bg-primary rounded-circle d-flex align-items-center justify-content-center me-3">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                                <h5 class="mb-0">What I Deliver</h5>
+                            </div>
+                            
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3">
+                                    <i class="fas fa-circle-check text-success me-2"></i>
+                                    <strong>Conversion-Optimized Stores</strong>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-circle-check text-success me-2"></i>
+                                    <strong>Lightning-Fast Performance</strong>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-circle-check text-success me-2"></i>
+                                    <strong>Secure Payment Integration</strong>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-circle-check text-success me-2"></i>
+                                    <strong>Scalable Architecture</strong>
+                                </li>
+                                <li>
+                                    <i class="fas fa-circle-check text-success me-2"></i>
+                                    <strong>SEO & Mobile Optimization</strong>
+                                </li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <div class="h4 mb-0">150+</div>
+                                    <small class="text-muted">Projects Delivered</small>
+                                </div>
+                                <div>
+                                    <div class="h4 mb-0">100%</div>
+                                    <small class="text-muted">Client Satisfaction</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-secondary">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="text-secondary text-info">I am a passionate e-commerce developer specializing in WordPress/WooCommerce and Shopify development. My focus is on creating high-converting, performant online stores that provide exceptional user experiences.</p>
+                </div>
+                
+                <div class="row mt-5" data-aos="fade-up">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <div class="avatar-lg bg-purple rounded-circle d-flex align-items-center justify-content-center mb-3 mx-auto">
+                                    <i class="fab fa-wordpress fa-2x text-white"></i>
+                                </div>
+                                <h4 class="card-title text-center">WordPress Expert</h4>
+                                <p class="card-text text-center text-secondary">
+                                    Custom theme development, plugin customization, and WooCommerce optimization.
+                                    Full-scale development from concept to deployment, specializing in high-performance WooCommerce stores with custom functionality.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <div class="avatar-lg bg-success rounded-circle d-flex align-items-center justify-content-center mb-3 mx-auto">
+                                    <i class="fab fa-shopify fa-2x text-white"></i>
+                                </div>
+                                <h4 class="card-title text-center">Shopify Specialist</h4>
+                                <p class="card-text text-center text-secondary">
+                                    Liquid development, custom sections, and app integration for scalable stores.
+                                    Specialized in Liquid development, custom Shopify themes, and app integration for scalable, conversion-focused stores.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <p class="text-secondary">Mastering both platforms for optimal e-commerce solutions</p>
+                </div>
+                
+                <div class="row g-4" data-aos="fade-up">
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="avatar-sm bg-purple rounded-circle d-flex align-items-center justify-content-center me-3">
+                                        <i class="fab fa-wordpress fa-lg text-white"></i>
+                                    </div>
+                                    <h4 class="mb-0">WordPress & WooCommerce</h4>
+                                </div>
+                                
+                                <p class="text-secondary mb-4">
+                                    Full-scale development from concept to deployment, specializing in high-performance 
+                                    WooCommerce stores with custom functionality.
+                                </p>
+                                
+                                <div class="mb-4">
+                                    <h6 class="fw-bold mb-3">Core Skills:</h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="skill-badge">
+                                            <i class="fab fa-php"></i> PHP
+                                        </span>
+                                        <span class="skill-badge">
+                                            <i class="fab fa-wordpress"></i> Custom Themes
+                                        </span>
+                                        <span class="skill-badge">
+                                            <i class="fas fa-cart-plus"></i> WooCommerce
+                                        </span>
+                                        <span class="skill-badge">
+                                            <i class="fas fa-bolt"></i> Performance
+                                        </span>
+                                        <span class="skill-badge">
+                                            <i class="fas fa-shield-alt"></i> Security
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Custom theme development from scratch
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        WooCommerce optimization & customization
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Payment gateway integration (Razorpay, PayPal)
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Speed optimization & SEO implementation
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="avatar-sm bg-success rounded-circle d-flex align-items-center justify-content-center me-3">
+                                        <i class="fab fa-shopify fa-lg text-white"></i>
+                                    </div>
+                                    <h4 class="mb-0">Shopify & Liquid</h4>
+                                </div>
+                                
+                                <p class="text-secondary mb-4">
+                                    Specialized in Liquid development, custom Shopify themes, and app integration 
+                                    for scalable, conversion-focused stores.
+                                </p>
+                                
+                                <div class="mb-4">
+                                    <h6 class="fw-bold mb-3">Core Skills:</h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="skill-badge">
+                                            <i class="fab fa-shopify"></i> Liquid
+                                        </span>
+                                        <span class="skill-badge">
+                                            <i class="fas fa-palette"></i> Theme Development
+                                        </span>
+                                        <span class="skill-badge">
+                                            <i class="fas fa-plug"></i> App Integration
+                                        </span>
+                                        <span class="skill-badge">
+                                            <i class="fas fa-mobile-alt"></i> Mobile-First
+                                        </span>
+                                        <span class="skill-badge">
+                                            <i class="fas fa-chart-line"></i> Conversion
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Custom Liquid template development
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Shopify app integration & configuration
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Custom section development with JSON templates
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Performance optimization & speed tuning
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="bg-secondary">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Impact & Results</h2>
+                    <p class="text-secondary">Measurable achievements across 150+ projects</p>
+                </div>
+                
+                <div class="stats-container" data-aos="fade-up">
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="3">0</div>
+                        <p class="text-secondary mb-0">Years Experience</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="150">0</div>
+                        <p class="text-secondary mb-0">Projects Delivered</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="20">0</div>
+                        <p class="text-secondary mb-0">Shopify Projects</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="40">0</div>
+                        <p class="text-secondary mb-0">% Speed Improvement</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Project Portfolio</h2>
+                    <p class="text-secondary">A curated selection of my best work across platforms</p>
+                </div>
+                
+                <div class="project-filter" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                    <button class="filter-btn" data-filter="shopify">Shopify</button>
+                    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                    <button class="filter-btn" data-filter="service">Service Websites</button>
+                </div>
+                
+                <div class="project-grid" data-aos="fade-up" id="projectGrid">
+                    <!-- Projects will be loaded here dynamically -->
+                </div>
+
+                <!-- Project Modal -->
+                <div class="project-modal" id="projectModal">
+                    <div class="modal-content">
+                        <button class="modal-close" id="modalClose">&times;</button>
+                        <div class="project-details" id="projectDetails">
+                            <!-- Project details will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-secondary">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Let's Build Together</h2>
+                    <p class="text-secondary text-info">Ready to create your next high-converting store?</p>
+                </div>
+                
+                <div class="row" data-aos="fade-up">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <h4 class="mb-4">Get in Touch</h4>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="avatar-sm bg-primary rounded-circle d-flex align-items-center justify-content-center me-3">
+                                            <i class="fas fa-envelope text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0">Email</h6>
+                                            <a href="mailto:rajpootsonu463@gmail.com" class="text-secondary text-decoration-none">
+                                                rajpootsonu463@gmail.com
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="avatar-sm bg-success rounded-circle d-flex align-items-center justify-content-center me-3">
+                                            <i class="fab fa-whatsapp text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0">WhatsApp</h6>
+                                            <a href="https://wa.me/918840264574" class="text-secondary text-decoration-none">
+                                                +91 88402 64574
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-sm bg-linkedin rounded-circle d-flex align-items-center justify-content-center me-3">
+                                            <i class="fab fa-linkedin-in text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0">LinkedIn</h6>
+                                            <a href="https://linkedin.com/in/sonu-rajpoot/" class="text-secondary text-decoration-none">
+                                                sonu-rajpoot
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <h6 class="mb-3">Preferred Communication</h6>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge bg-primary p-2">Email</span>
+                                        <span class="badge bg-success p-2">WhatsApp</span>
+                                        <span class="badge bg-linkedin p-2">LinkedIn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <h4 class="mb-4">Start a Project</h4>
+                                
+                                <form id="contactForm" class="contact-form">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="platform" class="form-label">Platform Preference</label>
+                                        <select class="form-control" id="platform" required>
+                                            <option value="">Select Platform</option>
+                                            <option value="wordpress">WordPress/WooCommerce</option>
+                                            <option value="shopify">Shopify</option>
+                                            <option value="both">Both/Undecided</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Project Details</label>
+                                        <textarea class="form-control" id="message" rows="4" 
+                                                  placeholder="Tell me about your project requirements, timeline, and budget..." 
+                                                  required></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="mb-0">© 2025 Sonu Rajpoot. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <div class="d-flex gap-3 justify-content-lg-end">
+                        <a href="https://linkedin.com/in/sonu-rajpoot/" class="text-secondary text-decoration-none">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/sonurajpoot463" class="text-secondary text-decoration-none">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://wa.me/918840264574" class="text-secondary text-decoration-none">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update project badges for dark mode
+            updateProjectBadges(newTheme);
+        });
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+            mobileMenuToggle.innerHTML = sidebar.classList.contains('show') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth < 992) {
+                        sidebar.classList.remove('show');
+                        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Active Navigation on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Animated Counter
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+        
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        };
+        
+        // Start counters when section is in view
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        const statsSection = document.getElementById('stats');
+        if (statsSection) observer.observe(statsSection);
+        
+        // Project Data - All your projects
+        const allProjects = [
+            // E-commerce Projects
+            {
+                id: 1,
+                title: "Archita Essentials",
+                category: ["wordpress", "ecommerce"],
+                description: "Full-scale WooCommerce store with 150+ products, custom design, and payment gateway integration.",
+                fullDescription: "Archita Essentials is a comprehensive WooCommerce store specializing in skincare and wellness products. Built from scratch with Elementor, featuring 150+ products, custom checkout flow, and integrated payment gateways including Razorpay and PayPal.",
+                image: "assets/img/Archita.webp",
+                url: "https://architaessentials.com/",
+                technologies: ["WordPress", "WooCommerce", "Elementor", "PHP", "MySQL", "Razorpay", "PayPal"],
+                features: ["150+ Product Management", "Custom Checkout", "Payment Gateway Integration", "Mobile Responsive", "SEO Optimized", "Performance Tuned"]
+            },
+            {
+                id: 2,
+                title: "Ethnika – Shopify Store",
+                category: ["shopify", "ecommerce"],
+                description: "Modern Shopify store for ethnic wear with custom Liquid sections and mobile-first design.",
+                fullDescription: "Ethnika is a premium Shopify store offering traditional ethnic wear. Features custom Liquid templates, responsive design, and seamless app integrations for inventory and order management.",
+                image: "assets/img/ethnika.webp",
+                url: "https://www.ethnika.in/",
+                technologies: ["Shopify", "Liquid", "HTML/CSS", "JavaScript", "JSON Templates", "Shopify Apps"],
+                features: ["Custom Liquid Templates", "Mobile-First Design", "App Integration", "Fast Loading", "SEO Ready", "Secure Checkout"]
+            },
+            {
+                id: 3,
+                title: "Project End",
+                category: ["shopify", "ecommerce"],
+                description: "Performance-focused Shopify store for protein bars with conversion-optimized layout.",
+                fullDescription: "Project End is a health-focused Shopify store specializing in protein bars. Built with conversion optimization in mind, featuring custom product pages, subscription options, and streamlined checkout.",
+                image: "assets/img/projectend.webp",
+                url: "https://projectend.in/",
+                technologies: ["Shopify", "Liquid", "JavaScript", "CSS3", "Subscription Apps"],
+                features: ["Conversion Focused", "Subscription Options", "Fast Performance", "Mobile Optimized", "Custom Product Layouts", "Analytics Integration"]
+            },
+            {
+                id: 4,
+                title: "Girvana Foods",
+                category: ["wordpress", "ecommerce"],
+                description: "Organic food store with custom WooCommerce UI and optimized performance.",
+                fullDescription: "Girvana Foods offers organic and healthy food products through a custom WooCommerce store. Features unique product categorization, custom checkout, and performance optimization for better user experience.",
+                image: "assets/img/girvana.webp",
+                url: "https://girvanafoods.com/",
+                technologies: ["WordPress", "WooCommerce", "Custom Theme", "PHP", "JavaScript"],
+                features: ["Custom Product Display", "Fast Loading", "SEO Friendly", "Secure Payments", "Mobile Responsive", "Easy Navigation"]
+            },
+            
+            // Service Websites
+            {
+                id: 5,
+                title: "The Game Alley",
+                category: ["wordpress", "service"],
+                description: "Gaming parlour website with engaging UI and booking system.",
+                fullDescription: "The Game Alley is a modern gaming parlour website featuring an engaging UI, booking system, and virtual tour of gaming facilities. Built with WordPress and custom booking functionality.",
+                image: "assets/img/thegamealley.webp",
+                url: "https://thegamealley.com/",
+                technologies: ["WordPress", "Custom Theme", "JavaScript", "Booking Plugin"],
+                features: ["Booking System", "Virtual Tour", "Responsive Design", "Gallery", "Contact Forms", "Social Integration"]
+            },
+            {
+                id: 6,
+                title: "Advance Pani",
+                category: ["wordpress", "service"],
+                description: "RO service corporate website with service sections and enquiry forms.",
+                fullDescription: "Corporate website for Advance Pani RO water solutions. Features service sections, product information, enquiry forms, and trust-building content for lead generation.",
+                image: "assets/img/advancepani.webp",
+                url: "https://advancepani.com/",
+                technologies: ["WordPress", "Elementor", "Contact Form 7", "PHP"],
+                features: ["Service Display", "Lead Generation", "Product Catalog", "Contact Forms", "Trust Elements", "Mobile Friendly"]
+            },
+            {
+                id: 7,
+                title: "Raj Ayurvedic",
+                category: ["wordpress", "service"],
+                description: "Wellness website for Ayurvedic massage and spa center.",
+                fullDescription: "Raj Ayurvedic is a wellness center website showcasing Ayurvedic therapies, benefits, and appointment booking. Features treatment information, therapist profiles, and online booking.",
+                image: "assets/img/rajayurvedicmassage.webp",
+                url: "https://rajayurvedicmassage.com/",
+                technologies: ["WordPress", "Booking System", "Gallery", "Contact Forms"],
+                features: ["Treatment Info", "Booking System", "Therapist Profiles", "Gallery", "Testimonials", "Location Map"]
+            },
+            {
+                id: 8,
+                title: "Front De Mer",
+                category: ["wordpress", "service"],
+                description: "Premium real estate website for Dubai properties.",
+                fullDescription: "Front De Mer is a high-end real estate website showcasing premium properties in Dubai. Features property listings, virtual tours, investor information, and contact forms.",
+                image: "assets/img/frontdemer.webp",
+                url: "https://frontdemer.ae/",
+                technologies: ["WordPress", "Custom Theme", "Property Plugin", "Virtual Tour"],
+                features: ["Property Listings", "Virtual Tours", "Investor Portal", "High-End Design", "Multi-language", "Contact Management"]
+            },
+            {
+                id: 9,
+                title: "Cab 4u",
+                category: ["wordpress", "service"],
+                description: "Car rental service website with vehicle listings and booking enquiry.",
+                fullDescription: "Cab 4u is a car rental service website featuring vehicle listings, booking enquiry flow, and location-based service information. Built for easy booking and fleet management.",
+                image: "assets/img/cab4ucabrental.webp",
+                url: "https://cab4ucarrental.com/",
+                technologies: ["WordPress", "Booking System", "Google Maps", "Contact Forms"],
+                features: ["Vehicle Listings", "Booking System", "Location Services", "Price Calculator", "Fleet Management", "Mobile App Integration"]
+            },
+            {
+                id: 10,
+                title: "Ardi Studio",
+                category: ["wordpress", "service"],
+                description: "Interior design and home decor website showcasing projects.",
+                fullDescription: "Ardi Studio showcases interior design projects with galleries, portfolio sections, and client testimonials. Features project categorization and enquiry forms for new clients.",
+                image: "assets/img/ardistudio.webp",
+                url: "https://ardistudio.online/",
+                technologies: ["WordPress", "Portfolio Plugin", "Gallery", "Contact Forms"],
+                features: ["Portfolio Gallery", "Project Showcase", "Client Testimonials", "Service Pages", "Contact Forms", "Blog Integration"]
+            },
+            
+            // Portal & Educational Websites
+            {
+                id: 11,
+                title: "Sarkari Result Portal",
+                category: ["wordpress", "service"],
+                description: "High-traffic job portal with custom theme and ACF implementation.",
+                fullDescription: "Custom WordPress job portal handling high traffic with Advanced Custom Fields implementation. Features job listings, results, notifications, and user accounts.",
+                image: "assets/img/sarkariresult.webp",
+                url: "https://www.sarkariresult.group/",
+                technologies: ["WordPress", "Custom Theme", "ACF", "User Management", "Caching"],
+                features: ["Job Listings", "Result Updates", "User Accounts", "Notifications", "High Traffic", "SEO Optimized"]
+            },
+            {
+                id: 12,
+                title: "Bridge Purple",
+                category: ["wordpress", "service"],
+                description: "LMS platform for online learning with course management.",
+                fullDescription: "Bridge Purple is a Learning Management System platform featuring course management, user dashboards, progress tracking, and secure payment integration for online education.",
+                image: "assets/img/bridgepurple.webp",
+                url: "https://bridgepurple.com/",
+                technologies: ["WordPress", "LMS Plugin", "User Dashboards", "Payment Gateway"],
+                features: ["Course Management", "Student Dashboards", "Progress Tracking", "Payment Integration", "Certificates", "Discussion Forums"]
+            },
+            {
+                id: 13,
+                title: "Kodestree",
+                category: ["wordpress", "service"],
+                description: "Coding bootcamp website with course listings and enrollment.",
+                fullDescription: "Kodestree offers coding bootcamps with detailed course information, enrollment flows, and student resources. Clean, developer-focused UI with easy navigation.",
+                image: "assets/img/kodestree.webp",
+                url: "https://kodestree.com/",
+                technologies: ["WordPress", "Course Plugin", "Enrollment System", "Payment Processing"],
+                features: ["Course Catalog", "Enrollment System", "Student Resources", "Payment Processing", "Progress Tracking", "Community Forum"]
+            },
+            {
+                id: 14,
+                title: "Score99 Academy",
+                category: ["wordpress", "service"],
+                description: "Coaching institute website with LMS features.",
+                fullDescription: "Score99 Academy is a coaching institute website with LMS features, course details, student engagement sections, and conversion-focused layout for enrollment.",
+                image: "assets/img/score99.webp",
+                url: "https://score99academy.com/",
+                technologies: ["WordPress", "LMS", "Student Portal", "Enrollment Forms"],
+                features: ["Course Management", "Student Portal", "Online Tests", "Progress Reports", "Fee Payment", "Attendance Tracking"]
+            },
+            
+            // Additional Projects
+            {
+                id: 15,
+                title: "PD Public Schools",
+                category: ["wordpress", "service"],
+                description: "Academic school website with structured content.",
+                image: "assets/img/pdps.webp",
+                url: "https://pdpublicschools.com/",
+                technologies: ["WordPress", "Custom Theme", "Content Management"],
+                features: ["Academic Calendar", "News & Events", "Admissions", "Gallery", "Contact Forms"]
+            },
+            {
+                id: 16,
+                title: "El Viaje De Shiva",
+                category: ["wordpress", "service"],
+                description: "Travel blog/booking website combining content with tours.",
+                image: "assets/img/El Viaje.webp",
+                url: "https://elviajedeshiva.com/",
+                technologies: ["WordPress", "Travel Plugin", "Blog", "Booking System"],
+                features: ["Travel Blog", "Tour Packages", "Booking System", "Gallery", "Destination Guides"]
+            },
+            {
+                id: 17,
+                title: "Blooming Himalaya",
+                category: ["wordpress", "service"],
+                description: "Tour and travel booking website for Himalayan destinations.",
+                image: "assets/img/blooming.webp",
+                url: "https://bloominghimalaya.com/",
+                technologies: ["WordPress", "Travel Plugin", "Booking System", "Payment Gateway"],
+                features: ["Tour Packages", "Booking System", "Payment Gateway", "Gallery", "Testimonials"]
+            },
+            {
+                id: 18,
+                title: "Gurkha Nimto Restaurant",
+                category: ["wordpress", "service"],
+                description: "Restaurant website highlighting menu and location.",
+                image: "assets/img/gurkha.webp",
+                url: "https://gurkhanimtorestaurant.co.uk/",
+                technologies: ["WordPress", "Menu Plugin", "Reservation System", "Google Maps"],
+                features: ["Menu Display", "Online Reservations", "Location Map", "Gallery", "Contact Information"]
+            },
+            {
+                id: 19,
+                title: "Bolt Movies",
+                category: ["wordpress", "service"],
+                description: "Custom movie listing platform with categorized content.",
+                image: "assets/img/boltmovies.webp",
+                url: "https://www.boltmovies.com/",
+                technologies: ["WordPress", "Custom Post Types", "Taxonomy", "Search"],
+                features: ["Movie Database", "Categorization", "Search Function", "User Reviews", "Rating System"]
+            },
+            {
+                id: 20,
+                title: "Shubham Tent House",
+                category: ["wordpress", "service"],
+                description: "Event and tent decoration service website.",
+                image: "assets/img/Shubham Tent House.webp",
+                url: "https://shubhamtenthouse.com/",
+                technologies: ["WordPress", "Portfolio", "Contact Forms", "Gallery"],
+                features: ["Portfolio Showcase", "Service Listing", "Booking Enquiry", "Gallery", "Testimonials"]
+            },
+            {
+                id: 21,
+                title: "Pigeon Invisible Grill",
+                category: ["wordpress", "service"],
+                description: "Safety net installation service website.",
+                image: "assets/img/pigeoninvisiblegrill.webp",
+                url: "https://pigeoninvisiblegrill.com/",
+                technologies: ["WordPress", "Service Pages", "Contact Forms", "Gallery"],
+                features: ["Service Information", "Product Showcase", "Contact Forms", "Testimonials", "FAQ"]
+            }
+        ];
+        
+        // Load projects function
+        function loadProjects(filter = 'all') {
+            const projectGrid = document.getElementById('projectGrid');
+            projectGrid.innerHTML = '';
+            
+            const filteredProjects = filter === 'all' 
+                ? allProjects 
+                : allProjects.filter(project => project.category.includes(filter));
+            
+            filteredProjects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+                projectCard.setAttribute('data-category', project.category.join(' '));
+                projectCard.innerHTML = `
+                    <div class="card h-100">
+                        <img src="${project.image || 'assets/img/default-project.jpg'}" 
+                             class="card-img-top" 
+                             alt="${project.title}"
+                             onerror="this.src='assets/img/default-project.jpg'">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title fw-bold mb-0">${project.title}</h5>
+                                <div class="d-flex gap-1">
+                                    ${project.category.map(cat => 
+                                        `<span class="badge ${getBadgeClass(cat)} p-2">${getCategoryLabel(cat)}</span>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                            <p class="card-text text-secondary mb-4">${project.description}</p>
+                            <div class="d-flex gap-2">
+                                <a href="${project.url}" target="_blank" class="btn btn-outline-primary flex-grow-1">
+                                    <i class="fas fa-external-link-alt me-2"></i>View Live
+                                </a>
+                                <button class="btn btn-primary view-details" data-project-id="${project.id}">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                projectGrid.appendChild(projectCard);
+            });
+            
+            // Add event listeners to view details buttons
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const projectId = e.target.closest('.view-details').getAttribute('data-project-id');
+                    showProjectDetails(projectId);
+                });
+            });
+        }
+        
+        // Get badge class based on category
+        function getBadgeClass(category) {
+            switch(category) {
+                case 'wordpress': return 'bg-purple';
+                case 'shopify': return 'bg-success';
+                case 'ecommerce': return 'bg-primary';
+                case 'service': return 'bg-warning';
+                default: return 'bg-secondary';
+            }
+        }
+        
+        // Get category label
+        function getCategoryLabel(category) {
+            switch(category) {
+                case 'wordpress': return 'WordPress';
+                case 'shopify': return 'Shopify';
+                case 'ecommerce': return 'E-commerce';
+                case 'service': return 'Service';
+                default: return category;
+            }
+        }
+        
+        // Update project badges for theme
+        function updateProjectBadges(theme) {
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach(badge => {
+                // Keep original badge classes but ensure visibility
+                if (theme === 'dark') {
+                    badge.style.color = 'white';
+                }
+            });
+        }
+        
+        // Show project details in modal
+        function showProjectDetails(projectId) {
+            const project = allProjects.find(p => p.id == projectId);
+            if (!project) return;
+            
+            const modal = document.getElementById('projectModal');
+            const details = document.getElementById('projectDetails');
+            
+            details.innerHTML = `
+                <div class="project-header mb-4">
+                    <h3 class="fw-bold mb-2">${project.title}</h3>
+                    <div class="d-flex gap-2 mb-3">
+                        ${project.category.map(cat => 
+                            `<span class="badge ${getBadgeClass(cat)} p-2">${getCategoryLabel(cat)}</span>`
+                        ).join('')}
+                    </div>
+                    <a href="${project.url}" target="_blank" class="btn btn-primary mb-4">
+                        <i class="fas fa-external-link-alt me-2"></i>Visit Live Website
+                    </a>
+                </div>
+                
+                <div class="project-image mb-4">
+                    <img src="${project.image || 'assets/img/default-project.jpg'}" 
+                         alt="${project.title}" 
+                         class="img-fluid rounded"
+                         onerror="this.src='assets/img/default-project.jpg'">
+                </div>
+                
+                <div class="project-content">
+                    <h5 class="fw-bold mb-3">Project Overview</h5>
+                    <p class="text-secondary mb-4">${project.fullDescription || project.description}</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h6 class="fw-bold mb-3">Technologies Used</h6>
+                            <div class="project-tech">
+                                ${project.technologies.map(tech => 
+                                    `<span class="tech-tag">${tech}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <h6 class="fw-bold mb-3">Key Features</h6>
+                            <ul class="list-unstyled">
+                                ${project.features.map(feature => 
+                                    `<li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        ${feature}
+                                    </li>`
+                                ).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="${project.url}" target="_blank" class="btn btn-outline-primary me-2">
+                            <i class="fas fa-external-link-alt me-2"></i>View Live Site
+                        </a>
+                        <button class="btn btn-secondary" id="closeModal">
+                            Close Details
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            
+            // Add event listener to close button
+            document.getElementById('closeModal').addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+        }
+        
+        // Initialize projects
+        loadProjects();
+        
+        // Filter projects
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter projects
+                const filter = button.getAttribute('data-filter');
+                loadProjects(filter);
+            });
+        });
+        
+        // Modal close functionality
+        const modalClose = document.getElementById('modalClose');
+        const projectModal = document.getElementById('projectModal');
+        
+        modalClose.addEventListener('click', () => {
+            projectModal.classList.remove('active');
+        });
+        
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                projectModal.classList.remove('active');
+            }
+        });
+        
+        // Contact Form
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    platform: document.getElementById('platform').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // In a real application, you would send this data to your server
+                // For demo purposes, we'll show a success message
+                alert('Thank you for your message! I will get back to you within 24 hours.');
+                contactForm.reset();
+                
+                // You could also save to localStorage for demo
+                localStorage.setItem('lastContact', JSON.stringify(formData));
+            });
+        }
+        
+        // Close sidebar when clicking on a link (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 992) {
+                    sidebar.classList.remove('show');
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Initialize with correct badge colors
+        updateProjectBadges(savedTheme);
+
+        
+    </script>
+</body>
+</html>
